@@ -14,8 +14,7 @@ import java.util.List;
 @Entity
 // Indexes speed up the retrieval of records from the database.
 // Without an index, the database engine must perform a full table scan to find the records that match the query conditions
-@Table(name = "shopper", indexes = {
-        @Index(name = "idx_shopper_id", columnList = "shopper_id")})
+@Table(name = "shopper")
 public class ShopperEntity {
 
     @Id

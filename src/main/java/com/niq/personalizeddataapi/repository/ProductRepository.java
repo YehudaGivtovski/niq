@@ -13,7 +13,8 @@ public interface ProductRepository extends JpaRepository<ProductEntity, String> 
             "JOIN shopper_shelf_item ssi ON p.product_id = ssi.product_id " +
             "WHERE ssi.shopper_id = :shopperId " +
             "AND (:category IS NULL OR p.category = :category) " +
-            "AND (:brand IS NULL OR p.brand = :brand)" +
+            "AND (:brand IS NULL OR p.brand = :brand) " +
+            "ORDER BY ssi.relevancy_score DESC " +
             "LIMIT :limit", nativeQuery = true)
     List<ProductEntity> findProductsByShopperIdAndFilters(@Param("shopperId") String shopperId,
                                                           @Param("category") String category,

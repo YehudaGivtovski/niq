@@ -12,7 +12,6 @@ import lombok.Data;
 // Indexes speed up the retrieval of records from the database.
 // Without an index, the database engine must perform a full table scan to find the records that match the query conditions
 @Table(name = "product", indexes = {
-        @Index(name = "idx_product_id", columnList = "product_id"),
         @Index(name = "idx_brand", columnList = "brand"),
         @Index(name = "idx_category", columnList = "category")
 })
